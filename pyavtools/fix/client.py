@@ -133,8 +133,9 @@ class ClientThread(threading.Thread):
                 try:
                     item = self.db.get_item(key)
                     item.is_subscribed = False
-                except:
+                except Exception as e:
                     log.error("Unable to clear subscribed bit for {0}".format(key))
+                    print(e)
             elif d[1] == 'r':
                 self.handle_value(d[2:])
             elif d[1] == 'q':
