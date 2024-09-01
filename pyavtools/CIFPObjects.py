@@ -347,7 +347,7 @@ SUSAP KABQK2GRW03    0100000340 N35012009W106375017         +1595705305000060150
         dist2,_ = Distance(course, rel_lng)
         dist = min([dist1,dist2])
         dist *= FEET_NM
-        display_object.render_runway (p12, p11, p21, p22, dist, self.elevation, self.length,
+        display_object.render_runway (p12.astype(int), p11.astype(int), p21, p22, dist, self.elevation, self.length,
                 self.bearing, self.name, self.airport_id, pov.zoom)
 
 
