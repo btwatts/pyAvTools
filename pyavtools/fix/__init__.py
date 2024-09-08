@@ -27,7 +27,7 @@ except:
 
 import logging
 import threading
-from datetime import datetime, UTC
+from datetime import datetime, timezone
 
 from . import client
 from .. import scheduler
@@ -63,7 +63,7 @@ class DB_Item(QObject):
         self._max = 100.0
         self._min = 0.0
         self._tol = 100     # Timeout lifetime in milliseconds.  Any older and quality is bad
-        self.timestamp = datetime.now(UTC)
+        self.timestamp = datetime.now(timezone.utc)
         self.aux = {}
         self.output = False
         self.subscribe = True
